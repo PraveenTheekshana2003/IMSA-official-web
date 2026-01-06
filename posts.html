@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMSA - official web</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="posts.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="IMSA image - without background.png">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/eabac940d1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+  <div class="nav-left">
+    <a href="home.html">
+      <img src="IMSA image.jpeg" alt="logo" class="logo-img">
+    </a>
+    <div class="logo">
+      <a href="home.html">IMSA</a>
+    </div>
+  </div>
+
+  <div class="nav-items">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="">My Profile</a></li>
+        <li><a href="">Logout</a></li>
+      </ul>
+  </div>
+</nav>
+    <main>
+      <div class="main-section">
+        <div class="image-section">
+          <a href=""> <img src="" alt=""></a>
+        </div>
+        <div class="heading-section">
+          <h1></h1>
+        </div>
+        <div class="date-time-section">
+          <div>
+            <p>
+              <span> By</span><a href="" class="username-text"></a><span>Published</span>
+            </p>
+            <p>
+              <a href=""><i class="fa-solid fa-pen"></i></a>
+              <a href=""><i class="fa-solid fa-trash"></i></a>
+            </p>
+          </div>
+          
+
+          <p class="like-button" onclick="lcupdate()">
+            <button onclick="like(this)" class="white">
+            <i class="fa-sharp fa-solid fa-heart"></i></button> <span id="likecount"></span>  likes
+          </p>
+        </div>
+        <div class="content-section"></div>
+      </div>
+      
+
+     <span id="likedcheck" style="display: none;"></span>
+     
+
+
+      <div class="related-posts-section">
+          <a href="" class="related-card">
+          <img src="" onerror="this.onerror=null; this.src='/images/default-image.png'" alt="" />
+          <div>
+            <h1></h1>
+            <p></p>
+          </div>
+      </a>
+      </div>
+    </main>
+
+    
+
+    <form action="" method="post" id="lcform" style="display: none;">
+      <input type="text" name="likecount" id="lc" onchange="this.form.submit()">
+      <input type="submit" id="submit">
+    </form>
+
+    
+
+    <!-- footer section started -->
+    <footer>
+        <!-- Remove the container if you want to extend the Footer to full width. -->
+        <div class="container-fluid">
+
+        <footer class="text-center text-lg-start footer">
+            <!-- Grid container -->
+            <div class="container p-4">
+            <!--Grid row-->
+            <div class="row my-4">
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+                <a href="home.html">
+                <div class="rounded-circle bg-white d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+                    <img src="IMSA image.jpeg" height="70" alt="logo">
+                </div>
+                </a>
+
+                <p class="text-center">IMSA is a student community where math meets real-world applications, helping students learn, grow, and connect beyond the classroom.</p>
+
+                <ul class="list-unstyled d-flex flex-row justify-content-center">
+                    <li>
+                    <a class="text-white px-2" href="#!">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    </li>
+                    <li>
+                    <a class="text-white px-2" href="#!">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    </li>
+                    <li>
+                    <a class="text-white ps-2" href="#!">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    </li>
+                </ul>
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 headline">Explore</h5>
+
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 01</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 02</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 03</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 04</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 05</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 06</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 07</a>
+                    </li>
+                </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 headline">Quick Links</h5>
+
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                    <a href="https://www.rjt.ac.lk/" class="text-white footer-link">Rajarata University</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="https://lib.rjt.ac.lk/" class="text-white footer-link">Main Library - RUSL</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="https://aps.rjt.ac.lk/library/" class="text-white footer-link">Library - FAS</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">Students' Union - FAS</a>
+                    </li>
+                </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 headline">Contact</h5>
+
+                <ul class="list-unstyled text-white">
+                    <li>
+                    <p><i class="fas fa-map-marker-alt pe-2"></i>
+                        Rajarata University of Sri Lanka,<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mihinthale,<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sri Lanka.
+                    </p>
+                    </li>
+                    <li>
+                    <p><i class="fas fa-phone pe-2"></i>+94 76 000 0000</p>
+                    </li>
+                    <li>
+                    <p><i class="fas fa-envelope pe-2 mb-0"></i>example@gmail.com</p>
+                    </li>
+                </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2026 Copyright - <span class="text-white">IMSA - Faculty of Applied Sciences</span>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+        </div>
+        <!-- End of .container -->
+    </footer>
+
+    <script>
+      
+      var fcount
+      var likedstatus=parseInt(document.getElementById("likedcheck").innerHTML)
+      function like(x) {
+        x.classList.toggle("red");
+        var count=parseInt(document.getElementById("likecount").innerHTML)
+        if(likedstatus===0){
+        document.getElementById("likecount").innerHTML=count+1
+        fcount=parseInt(document.getElementById("likecount").innerHTML)
+        x.classList.add("white")
+        likedstatus=1
+        }
+        else{
+          document.getElementById("likecount").innerHTML=count-1
+          likedstatus=0
+        }
+        }
+       function lcupdate(){
+        document.getElementById("lc").value=fcount
+        document.getElementById("submit").click()
+       }
+    </script>
+  </body>
+</html>
