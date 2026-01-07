@@ -1,7 +1,7 @@
 :root {
-  --uiclr: #000000;
+  --ui-gradient: linear-gradient(45deg, #00BFFF, #1E90FF);
+  --ui-gradient-negative: linear-gradient(45deg, #1E90FF, #00BFFF);
   --white: #e4e9fd;
-  --main-text: #00BFFF;
   --black: #040c0e;
   --light-black: rgb(53, 50, 50);
 }
@@ -16,8 +16,9 @@ body {
   overflow-x: hidden;
 }
 
+/* ================= NAVBAR ================= */
 nav {
-  background-color: var(--uiclr);
+  background: var(--ui-gradient);
   height: 100px;
   width: 100%;
   display: flex;
@@ -45,12 +46,13 @@ nav {
 
 .logo a {
   text-decoration: none;
-  color: var(--main-text);
+  color: var(--black);
 }
 
 .nav-items ul {
   display: flex;
   gap: 30px;
+  padding-top: 20px;
 }
 
 .nav-items ul li {
@@ -59,89 +61,254 @@ nav {
 
 .nav-items ul li a {
   text-decoration: none;
-  color: var(--main-text);
+  color: var(--black);
   font-size: 1.08rem;
 }
 
-/* ----------------------------------------------------------------- */
-.pop-posts-container h1 {
-  margin: 30px 0;
-  margin-left: 50px;
-  color: var(--light-black);
-  display: flex;
-  justify-content: space-between;
+/* ======= ADD SEARCH BAR ======= */
+.search {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 20px;
+    position: relative;
 }
 
-.pop-posts-container h1 a button {
-  margin-right: 50px;
-  padding: 10px 8px;
-  background-color: var(--uiclr);
+.search form {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1.1rem;
+    color: #666666;
+}
+
+.search input::placeholder {
+    color: #999999;
+}
+
+.reset-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999999;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.reset-btn:hover {
+    color: #333333;
+}
+
+#searchDiv {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ================= HERO =================== */
+.hero-section {
+  position: relative;
+  height: calc(100vh - 100px);
+  background: #0b0715;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#waveCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-section::after {
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+  flex: 1;
   color: var(--white);
+}
+
+.hero-content h1 {
+  padding-left: 110px;
+  font-size: 60px;
+  font-weight: bold;
+  position: relative;
+  top: 200px;
+  left: 550px;
+}
+
+.hero-content p {
+  font-size: 36px;
+  position: relative;
+  top: 200px;
+  left: 240px;
+}
+
+/* ================= SVG WAVE ================= */
+.wave-wrapper {
+  height: 120px;
+  overflow: hidden;
+}
+
+.wave {
+  fill: white;
+  animation: move 8s linear infinite;
+}
+
+.wave2 {
+  opacity: 0.5;
+  animation-duration: 12s;
+}
+
+@keyframes move {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ================= GLASS CARD ==================== */
+.glass-section {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.glass-card {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  padding: 0;
+  border-radius: 30px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #00BFFF;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ======== REVEAL ANIMATION ========= */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.glass-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  animation: float 4s ease-in-out infinite;
+}
+
+.glass-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#first {
+  top: 90px;
+  left: 80px;
+  transform: translateX(-40px);
+}
+
+#second {
+  top: 40px;
+  right: 60px;
+  transform: translateX(40px);
+}
+
+#third {
+  bottom: 40px;
+  left: 40%;
+  transform: translateX(-50%);
+  transform: translateY(40px);
+}
+
+
+/* ================= POSTS ================= */
+.pop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.compose button {
+  background-color: #000000;
+  color: #ffffff;
   border: none;
-  border-radius: 3px;
-  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.compose {
+  text-decoration: none;
 }
 
 .pop-posts {
   padding: 0 50px;
-  overflow: auto;
-  white-space: nowrap;
-}
-
-::-webkit-scrollbar {
-  display: none;
+  display: flex;
+  gap: 20px;
 }
 
 .post-box {
-  display: flex;
-  flex-direction: column;
-  height: 220px;
-  width: 250px;
-  display: inline-block;
-  margin: 20px;
-  overflow: hidden;
-  box-shadow: 0px 0px 5px rgb(175, 172, 172);
-  border-radius: 4px;
-  transition: 0.5s;
-  opacity: 1;
-  border: 1px solid transparent;
-  padding: 5px;
+    width: 280px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    background-color: #ffffff;
+    cursor: pointer;
 }
 
 .post-box:hover {
-  scale: 1.1;
-  box-shadow: 0px 0px 10px rgb(193, 190, 190);
-  background-color: rgba(0, 157, 131, 0.2);
-  border: 1px solid rgb(209, 203, 203);
-  cursor: pointer;
+    background-color: #d1eee8; 
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
 
-.post-box img {
-  height: 70%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.post-box h2 {
-  font-size: 1.3rem;
-  color: var(--light-black);
-  padding: 0px 3px;
-  margin-top: -20px;
-  color: var(--light-black);
-  overflow: hidden;
-}
-
-.post-box p {
-  padding: 0px 3px;
-  font-size: 0.85rem;
-  word-wrap: break-word;
-  white-space: initial;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin: 3px 0;
-  height: 13%;
-  color:gray;
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    width: 100%;
+    text-align: center;
 }
 
 .middle a {
@@ -149,33 +316,61 @@ nav {
   padding: 10px 15px;
   position: relative;
   top: 20px;
-  left: 70px;
+  left: 0px;
   opacity: 0;
-  transition: 1s;
+  transition: 0.75s;
   text-decoration: none;
-  color: white;
+  color: var(--white);
   border-radius: 2px;
 }
 
 .post-box:hover .middle a {
   opacity: 1;
   z-index: 2;
-  top: -60px;
+  top: -10px;
   color: var(--white);
-  background-color: var(--uiclr);
+  background: var(--ui-gradient);
 }
 
-.post-box:hover p,
-.post-box:hover img,
-.post-box:hover h2 {
-  opacity: 0.5;
+.post-box:hover .middle {
+    opacity: 1;
 }
 
-/* ------------------------------------------------------------------------------------ */
+.read-more-btn {
+    background-color: #111111;
+    color: var(--white);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.post-box:hover .post-content, 
+.post-box:hover .post-img-wrapper {
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+}
+
+.post-img-wrapper {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #cccccc;
+  margin-bottom: 10px;
+}
+
+.post-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========= RECENT POSTS ========== */
+
 .recent-posts-container h1 {
   margin-top: 20px;
   margin-left: 50px;
-  color: var(--light-black);
+  color: var(--black);
 }
 
 .recent-posts {
@@ -220,7 +415,6 @@ nav {
 }
 
 .img-container {
-  /* margin-top: 2px; */
   height: 40%;
   padding: 1 px;
   border-radius: 10px;
@@ -253,7 +447,7 @@ nav {
 .recent-post-box h2 {
   margin: 10px;
   margin-bottom: 20px;
-  color: var(--light-black);
+  color: var(--black);
   height: 11%;
   overflow: hidden;
   word-wrap: break-word;
@@ -280,86 +474,28 @@ nav {
 .post-footer p {
   font-size: 1rem;
   font-weight: bold;
-  color: var(--uiclr);
 }
 
 .post-footer button {
   padding: 5px 15px;
-  background-color: var(--uiclr);
+  background: var(--ui-gradient);
   border-radius: 5px;
   font-size: small;
-  color: white;
+  color: var(--white);
   text-decoration: none;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.search form{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.post-footer button:hover {
+  background: var(--ui-gradient-negative);
 }
 
-.reset-btn{
-  z-index: 5;
-  position: absolute;
-  left: 66%;
-  border: none;
-  background-color: transparent;
-  display: none;
-  color: rgb(178, 175, 175);
-  font-size: 1rem;
-}
-
-#search{
-   position: absolute;
-  width: 35%;
-  height: 40px;
-  left: 50%;
-  transform: translate(-50%);
-  border-radius: 20px;
-  outline: none;
-  border: none;
-  transition: 1s;
-  padding: 0 10px;
-  font-size: 1rem;
-  color: var(--light-black);
-}
-
-#search::placeholder{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-}
-
-#searchDiv{
-  position: absolute;
-  top:70px;
-  background-color: rgb(248, 248, 248);
-  left: 50%;
-  transform: translate(-50%);
-  flex-direction: column;
-  width: 35%;
-  transition: 1s;
-}
-
-#searchDiv p{
-  margin: 7px 0;
-}
-
-#searchDiv p a{
-  text-decoration: none;
-  color: gray;
-}
-
-#searchDiv p:hover a{
-  color: black;
-}
-
+/* ================= FOOTER ================= */
 .footer {
-  background-color: var(--uiclr);
-  color: var(--main-text);
+  background: var(--ui-gradient);
+  color: var(--black);
 }
 
 .headline {
@@ -376,6 +512,20 @@ nav {
 }
 
 .footer-link:hover {
-  color: var(--main-text) !important;
+  color: var(--black) !important;
   transform: translateX(6px);
+}
+
+/* ================= BACK TO TOP ================= */
+#back-to-top-button {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #00ff7f;
+  border: none;
+  font-size: 22px;
+  z-index: 10000;
 }
