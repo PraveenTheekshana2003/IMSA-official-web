@@ -1,149 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>IMSA - Official Web</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="home.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Icons -->
-  <script src="https://kit.fontawesome.com/eabac940d1.js" crossorigin="anonymous"></script>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMSA - official web</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="IMSA image - without background.png">
+    
+    <script src="https://kit.fontawesome.com/eabac940d1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
 <body>
-
-<!-- ================= NAVBAR ================= -->
-<nav id="top">
-  <div class="nav-left">
-    <a href="#">
-      <img src="IMSA image.jpeg" alt="logo" class="logo-img" />
-    </a>
-    <div class="logo">
-      <a href="#">IMSA</a>
+    <nav>
+    <!-- LEFT -->
+    <div class="nav-left">
+        <a href="home.html">
+        <img src="IMSA image.jpeg" alt="logo" class="logo-img">
+        </a>
+        <div class="logo">
+        <a href="home.html">IMSA</a>
+        </div>
     </div>
-  </div>
 
-  <div class="search">
-    <form>
-      <input type="text" id="search" placeholder="Search articles" />
-      <button type="reset" class="reset-btn">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </form>
-    <div id="searchDiv"></div>
-  </div>
+    <!-- CENTER SEARCH -->
+    <div class="search">
+        <form action="">
+        <input
+            type="text"
+            onkeyup="sendData(this)"
+            id="search"
+            placeholder="Search articles"
+        >
+        <button
+            type="reset"
+            class="reset-btn"
+            id="reset-btn"
+            onclick="sendData(this)"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        </form>
 
-  <div class="nav-items">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">My Profile</a></li>
-      <li><a href="#">Logout</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ================= HERO SECTION ================= -->
-<header class="hero-section">
-
-  <!-- Animated Canvas -->
-  <canvas id="waveCanvas"></canvas>
-
-  <!-- Text Content -->
-  <div class="hero-content">
-    <h1>IMSA</h1>
-    <p>A student community where mathematics meets real-world applications.</p>
-  </div>
-
-</header>
-
-<!-- ================= SVG WAVE ================= -->
-<div class="wave-wrapper">
-  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-    <path class="wave wave1"
-      d="M0,60 C150,120 350,0 600,60 850,120 1050,0 1200,60 L1200,0 L0,0 Z"></path>
-    <path class="wave wave2"
-      d="M0,80 C200,0 400,160 600,80 800,0 1000,160 1200,80 L1200,0 L0,0 Z"></path>
-  </svg>
-</div>
-
-<!-- ================= MAIN CONTENT ================= -->
-<main>
-
-  <section class="pop-posts-container">
-    <h1>
-      Popular Articles
-      <a href="#"><button><i class="fa-solid fa-pen"></i> Compose</button></a>
-    </h1>
-
-    <div class="pop-posts">
-      <div class="post-box">
-        <img src="images/default-image.png" />
-        <div class="middle"><a href="#">Read More</a></div>
-        <h2>Sample Title</h2>
-        <p>Short description here...</p>
-      </div>
+        <div class="results" id="searchDiv"></div>
     </div>
-  </section>
 
-</main>
+    <!-- RIGHT -->
+    <div class="nav-items">
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="">My Profile</a></li>
+        <li><a href="">Logout</a></li>
+        </ul>
+    </div>
+    </nav>
+    <main>
+        <div class="pop-posts-container">
+            <h1>Popular Articles <a href=""><button><i class="fa-sharp fa-solid fa-pen"></i>&nbsp; Compose</button></a> </h1>
+            
+            
+            <div class="pop-posts">
+                <!-- <marquee behavior="alternate" direction="" onmouseover="this.stop();" onmouseout="this.start();"> -->
+                
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer text-center p-4">
-  © 2026 IMSA - Faculty of Applied Sciences
-</footer>
+                <div class="post-box">
+                   <img src="" alt="" onerror="this.onerror=null; this.src='images/default-image.png'">
+                   <div class="middle">
+                    <a href="" >Read More</a>
+                  </div>
+                   <h2></h2>
+                   <p></p>
+                </div>
+                 
+            <!-- </marquee> -->
+            </div>
+        </div>
 
-<!-- Back to top -->
-<a href="#top">
-  <button id="back-to-top-button">&#11165;</button>
-</a>
+        <div class="recent-posts-container">
+            <h1>Recent Articles</h1>
+            <div class="recent-posts">
+                    <div class="recent-post-box">
+                    <a href="" class="link-card">
+                    <div class="img-container">
+                        <div>
+                        <img src="" alt="" onerror="this.onerror=null; this.src='images/default-image.png'">
+                    </div>
+                    </div>
+                    <p class="days"></p>
+                    <h2 title=""></h2>
+                    <p class="post-desc"></p>
+                    <div class="post-footer">
+                       <button >ReadMore</button>
+                    </div>
+                </a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
 
-<!-- ================= CANVAS ANIMATION JS ================= -->
-<script>
-const canvas = document.getElementById("waveCanvas");
-const ctx = canvas.getContext("2d");
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
+    <!-- footer section started -->
+    <footer>
+        <!-- Remove the container if you want to extend the Footer to full width. -->
+        <div class="container-fluid">
 
-let t = 0;
+        <footer class="text-center text-lg-start footer">
+            <!-- Grid container -->
+            <div class="container p-4">
+            <!--Grid row-->
+            <div class="row my-4">
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+                <a href="home.html">
+                <div class="rounded-circle bg-white d-flex align-items-center justify-content-center mb-4 mx-auto Foot_icon" style="width: 150px; height: 150px;">
+                    <img src="IMSA image.jpeg" height="70" alt="logo">
+                </div>
+                </a>
 
-  for (let i = 0; i < 3; i++) {
-    ctx.beginPath();
-    ctx.moveTo(0, canvas.height / 2);
+                <p class="text-center">IMSA is a student community where math meets real-world applications, helping students learn, grow, and connect beyond the classroom.</p>
 
-    for (let x = 0; x < canvas.width; x++) {
-      const y =
-        Math.sin(x * 0.01 + t + i) * 40 +
-        canvas.height / 2 + i * 30;
-      ctx.lineTo(x, y);
-    }
+                <ul class="list-unstyled d-flex flex-row justify-content-center">
+                    <li>
+                    <a class="text-white px-2" href="#!">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    </li>
+                    <li>
+                    <a class="text-white px-2" href="#!">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    </li>
+                    <li>
+                    <a class="text-white ps-2" href="#!">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    </li>
+                </ul>
 
-    ctx.strokeStyle = `rgba(0,191,255,${0.3 - i * 0.08})`;
-    ctx.lineWidth = 2;
-    ctx.stroke();
-  }
+                </div>
+                <!--Grid column-->
 
-  t += 0.02;
-  requestAnimationFrame(animate);
-}
-animate();
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 headline">Explore</h5>
+
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 01</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 02</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 03</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 04</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 05</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 06</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">text 07</a>
+                    </li>
+                </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 headline">Quick Links</h5>
+
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                    <a href="https://www.rjt.ac.lk/" class="text-white footer-link">Rajarata University</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="https://lib.rjt.ac.lk/" class="text-white footer-link">Main Library - RUSL</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="https://aps.rjt.ac.lk/library/" class="text-white footer-link">Library - FAS</a>
+                    </li>
+                    <li class="mb-2">
+                    <a href="" class="text-white footer-link">Students' Union - FAS</a>
+                    </li>
+                </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 headline">Contact</h5>
+
+                <ul class="list-unstyled text-white">
+                    <li>
+                    <p><i class="fas fa-map-marker-alt pe-2"></i>
+                        Rajarata University of Sri Lanka,<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mihinthale,<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sri Lanka.
+                    </p>
+                    </li>
+                    <li>
+                    <p><i class="fas fa-phone pe-2"></i>+94 76 000 0000</p>
+                    </li>
+                    <li>
+                    <p><i class="fas fa-envelope pe-2 mb-0"></i>example@gmail.com</p>
+                    </li>
+                </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2026 Copyright - <span class="text-white">IMSA - Faculty of Applied Sciences</span>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+        </div>
+        <!-- End of .container -->
+    </footer>
+
+    <script>
+function sendData(e){
+    const searchResults = document.getElementById("searchDiv");
+        if(e.value.length!=0){
+            document.getElementById("reset-btn").style.display="block"
+        }else{
+            document.getElementById("reset-btn").style.display="none"
+        }
+        
+        let match = e.value.match(/^[a-z A-Z]*/)
+        let match2 = e.value.match(/\s*/)
+        if(match2[0] === e.value){
+            searchResults.innerHTML ='';
+            return
+        }
+        if(match[0] === e.value){
+        fetch('search',{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({payload: e.value})
+        }).then(res=> res.json()).then(data => {
+            let payload =data.payload;
+            searchResults.innerHTML = '';
+            if(payload.length < 1){
+                searchResults.innerHTML = '<p>Sorry nothing found.</p>';
+                return
+            }
+            payload.forEach((PosT,index)=>{
+                if(index > 0) searchResults.innerHTML +='';
+                searchResults.innerHTML += `<p><a href="/posts/${PosT._id}" onmouseover="suggest(this)" id="data">${PosT.title}</a></p>`
+            })
+        })
+        return
+        }
+        searchResults.innerHTML = '';
+        }
+        function suggest(e){
+           document.getElementById("search").value=e.innerHTML
+        }
+    
 </script>
-
 </body>
 </html>
