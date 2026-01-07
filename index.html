@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMSA - official web</title>
-    <link rel="stylesheet" href="home.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="IMSA image - without background.png">
-    
-    <script src="https://kit.fontawesome.com/eabac940d1.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>IMSA - Official Web</title>
+
+  <link rel="stylesheet" href="home.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="IMSA image.jpeg">
+
+  <script src="https://kit.fontawesome.com/eabac940d1.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
 <body>
-    <nav>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
     <!-- LEFT -->
     <div class="nav-left">
-        <a href="home.html">
+        <a href="index.html">
         <img src="IMSA image.jpeg" alt="logo" class="logo-img">
         </a>
         <div class="logo">
-        <a href="home.html">IMSA</a>
+        <a href="index.html">IMSA</a>
         </div>
     </div>
 
@@ -49,34 +54,81 @@
     <!-- RIGHT -->
     <div class="nav-items">
         <ul>
-        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about-us.html">About Us</a></li>
         <li><a href="">My Profile</a></li>
         <li><a href="">Logout</a></li>
         </ul>
     </div>
     </nav>
-    <main>
-        <div class="pop-posts-container">
-            <h1>Popular Articles <a href=""><button><i class="fa-sharp fa-solid fa-pen"></i>&nbsp; Compose</button></a> </h1>
-            
-            
-            <div class="pop-posts">
-                <!-- <marquee behavior="alternate" direction="" onmouseover="this.stop();" onmouseout="this.start();"> -->
-                
 
-                <div class="post-box">
-                   <img src="" alt="" onerror="this.onerror=null; this.src='images/default-image.png'">
-                   <div class="middle">
-                    <a href="" >Read More</a>
-                  </div>
-                   <h2></h2>
-                   <p></p>
+<!-- ================= HERO SECTION ================= -->
+<header class="hero-section">
+
+  <!-- Animated Canvas -->
+  <canvas id="waveCanvas"></canvas>
+
+  <!-- Text Content -->
+  <div class="hero-content">
+    <h1>I M S A</h1>
+    <p>A student community where mathematics meets real-world applications.</p>
+  </div>
+
+<!-- glass card -->
+<section class="glass-section">
+
+  <div class="glass-card" id="first">
+    <img src="IMSA image.jpeg" alt="IMSA Official logo">
+  </div>
+
+  <div class="glass-card" id="second">
+    <img src="landing image 02.jpg" alt="Math with fun">
+  </div>
+
+  <div class="glass-card" id="third">
+    <img src="landing image 03.jpg" alt="black board">
+  </div>
+
+</section>
+<!-- glass card ends here -->
+
+</header>
+
+<!-- ================= SVG WAVE ================= -->
+<div class="wave-wrapper">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path class="wave wave1"
+      d="M0,60 C150,120 350,0 600,60 850,120 1050,0 1200,60 L1200,0 L0,0 Z"></path>
+    <path class="wave wave2"
+      d="M0,80 C200,0 400,160 600,80 800,0 1000,160 1200,80 L1200,0 L0,0 Z"></path>
+  </svg>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main>
+  <div class="pop-posts-container">
+    <div class="pop-header">
+        <h1>Popular Articles</h1>
+        <a href="" class="compose">
+            <button><i class="fa-sharp fa-solid fa-pen"></i>&nbsp; Compose</button>
+        </a>
+    </div>
+
+    <div class="pop-posts">
+        <div class="post-box">
+            <div class="post-img-wrapper">
+                <img src="" alt="" onerror="this.onerror=null; this.src='images/default-image.png'">
+            </div>
+            <div class="post-content">
+                <h2></h2>
+                <p></p>
+                <div class="middle">
+                    <a href="">Read More</a>
                 </div>
-                 
-            <!-- </marquee> -->
             </div>
         </div>
+    </div>
+  </div>
 
         <div class="recent-posts-container">
             <h1>Recent Articles</h1>
@@ -101,10 +153,8 @@
         </div>
     </main>
 
-
-    <!-- footer section started -->
+<!-- ================= FOOTER ================= -->
     <footer>
-        <!-- Remove the container if you want to extend the Footer to full width. -->
         <div class="container-fluid">
 
         <footer class="text-center text-lg-start footer">
@@ -115,7 +165,7 @@
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
 
-                <a href="home.html">
+                <a href="index.html">
                 <div class="rounded-circle bg-white d-flex align-items-center justify-content-center mb-4 mx-auto Foot_icon" style="width: 150px; height: 150px;">
                     <img src="IMSA image.jpeg" height="70" alt="logo">
                 </div>
@@ -229,49 +279,63 @@
         </footer>
 
         </div>
-        <!-- End of .container -->
     </footer>
+    <!-- End of the footer -->
 
-    <script>
-function sendData(e){
-    const searchResults = document.getElementById("searchDiv");
-        if(e.value.length!=0){
-            document.getElementById("reset-btn").style.display="block"
-        }else{
-            document.getElementById("reset-btn").style.display="none"
-        }
-        
-        let match = e.value.match(/^[a-z A-Z]*/)
-        let match2 = e.value.match(/\s*/)
-        if(match2[0] === e.value){
-            searchResults.innerHTML ='';
-            return
-        }
-        if(match[0] === e.value){
-        fetch('search',{
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({payload: e.value})
-        }).then(res=> res.json()).then(data => {
-            let payload =data.payload;
-            searchResults.innerHTML = '';
-            if(payload.length < 1){
-                searchResults.innerHTML = '<p>Sorry nothing found.</p>';
-                return
-            }
-            payload.forEach((PosT,index)=>{
-                if(index > 0) searchResults.innerHTML +='';
-                searchResults.innerHTML += `<p><a href="/posts/${PosT._id}" onmouseover="suggest(this)" id="data">${PosT.title}</a></p>`
-            })
-        })
-        return
-        }
-        searchResults.innerHTML = '';
-        }
-        function suggest(e){
-           document.getElementById("search").value=e.innerHTML
-        }
-    
+<!-- Back to top -->
+<a href="#top">
+  <button id="back-to-top-button">&#11165;</button>
+</a>
+
+<!-- ================= CANVAS ANIMATION JS ================= -->
+<script>
+const canvas = document.getElementById("waveCanvas");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+let t = 0;
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < 3; i++) {
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height / 2);
+
+    for (let x = 0; x < canvas.width; x++) {
+      const y =
+        Math.sin(x * 0.01 + t + i) * 40 +
+        canvas.height / 2 + i * 30;
+      ctx.lineTo(x, y);
+    }
+
+    ctx.strokeStyle = `rgba(0,191,255,${0.3 - i * 0.08})`;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  t += 0.02;
+  requestAnimationFrame(animate);
+}
+animate();
+
+//glass cards revealing animation
+window.addEventListener("load", () => {
+    const cards = document.querySelectorAll(".glass-card");
+
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.classList.add("show");
+      }, 600 + index * 300); // stagger animation
+    });
+  });
 </script>
+
 </body>
 </html>
