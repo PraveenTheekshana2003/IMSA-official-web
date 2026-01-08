@@ -65,6 +65,10 @@ nav {
   font-size: 1.08rem;
 }
 
+.nav-items ul li a:hover {
+  border-bottom: 2px solid var(--white);
+}
+
 /* ======= ADD SEARCH BAR ======= */
 .search {
     flex: 1;
@@ -147,7 +151,7 @@ nav {
 }
 
 .hero-content h1 {
-  padding-left: 110px;
+  padding-left: 130px;
   font-size: 60px;
   font-weight: bold;
   position: relative;
@@ -160,6 +164,22 @@ nav {
   position: relative;
   top: 200px;
   left: 240px;
+}
+
+.explore button {
+  padding: 8px 20px;
+  border: none;
+  background: var(--ui-gradient);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 350px;
+  left: 730px;
+}
+
+.explore button:hover {
+  background: var(--ui-gradient-negative);
 }
 
 /* ================= SVG WAVE ================= */
@@ -252,7 +272,8 @@ nav {
 }
 
 
-/* ================= POSTS ================= */
+/* ================= COMMON ================= */
+
 .pop-header {
   display: flex;
   justify-content: space-between;
@@ -261,101 +282,47 @@ nav {
 }
 
 .compose button {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000;
+  color: #fff;
   border: none;
   padding: 8px 15px;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: 500;
   display: flex;
   align-items: center;
-  text-decoration: none;
 }
 
 .compose {
   text-decoration: none;
 }
 
-.pop-posts {
-  padding: 0 50px;
+/* ================= POPULAR POSTS ================= */
+
+.popular {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  padding: 0 50px;
+  flex-wrap: wrap;
 }
 
 .post-box {
-    width: 280px;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    overflow: hidden;
-    padding: 10px;
-    position: relative;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
-    background-color: #ffffff;
-    cursor: pointer;
+  width: 280px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fff;
+  position: relative;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .post-box:hover {
-    background-color: #d1eee8; 
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-}
-
-.middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    width: 100%;
-    text-align: center;
-}
-
-.middle a {
-  background-color: white;
-  padding: 10px 15px;
-  position: relative;
-  top: 20px;
-  left: 0px;
-  opacity: 0;
-  transition: 0.75s;
-  text-decoration: none;
-  color: var(--white);
-  border-radius: 2px;
-}
-
-.post-box:hover .middle a {
-  opacity: 1;
-  z-index: 2;
-  top: -10px;
-  color: var(--white);
-  background: var(--ui-gradient);
-}
-
-.post-box:hover .middle {
-    opacity: 1;
-}
-
-.read-more-btn {
-    background-color: #111111;
-    color: var(--white);
-    padding: 12px 24px;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 4px;
-    display: inline-block;
-}
-
-.post-box:hover .post-content, 
-.post-box:hover .post-img-wrapper {
-    opacity: 0.3;
-    transition: opacity 0.4s ease;
+  background-color: #d1eee8;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .post-img-wrapper {
-  width: 100%;
   height: 150px;
-  border: 1px solid #cccccc;
   margin-bottom: 10px;
 }
 
@@ -365,132 +332,194 @@ nav {
   object-fit: cover;
 }
 
-/* ========= RECENT POSTS ========== */
+.middle {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.post-box:hover .middle {
+  opacity: 1;
+}
+
+.middle a {
+  padding: 10px 15px;
+  background: var(--ui-gradient);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.middle a:hover {
+  background: var(--ui-gradient-negative);
+}
+
+/* ================= RECENT POSTS ================= */
 
 .recent-posts-container h1 {
-  margin-top: 20px;
-  margin-left: 50px;
-  color: var(--black);
+  margin: 40px 50px 20px;
 }
 
 .recent-posts {
-  margin-top: -40px;
-  width: 100vw;
-  background-color: white;
   display: flex;
   gap: 4%;
+  padding: 0 50px 50px;
   flex-wrap: wrap;
-  justify-content: start;
-  padding: 4%;
 }
 
 .recent-post-box {
-  width: 20%;
-  min-width: 300px;
+  width: 300px;
   height: 500px;
-  background-color: white;
-  margin: 30px 0;
+  background: white;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.5);
-  transition: 0.5s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  transition: 0.4s;
 }
 
 .recent-post-box:hover {
-  scale: 1;
-  box-shadow: 0 0 30px #009d8358;
-}
-
-.recent-post-box:hover .img-container img{
-  scale: 1.1;
-}
-
-@media only screen and (max-width: 600px) {
-  .recent-posts {
-    justify-content: center;
-  }
-}
-
-.link-card{
-  text-decoration: none;
+  box-shadow: 0 0 30px rgba(0,157,131,0.35);
 }
 
 .img-container {
   height: 40%;
-  padding: 1 px;
-  border-radius: 10px;
-}
-
-.img-container div{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  padding: 1px;
   overflow: hidden;
-  border-radius: 10px;
 }
 
-.img-container div img {
-  border-radius: 10px; 
-  object-fit: cover;
+.img-container img {
   width: 100%;
-  transition: 1s;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.8s;
+}
+
+.recent-post-box:hover img {
+  transform: scale(1.1);
 }
 
 .days {
+  text-align: right;
   margin: 10px;
-  text-align: end;
-  font-size: small;
+  font-size: 0.8rem;
   font-weight: bold;
-  color: rgb(87, 85, 85);
+  color: #555;
 }
 
 .recent-post-box h2 {
   margin: 10px;
-  margin-bottom: 20px;
-  color: var(--black);
-  height: 11%;
+  height: 60px;
   overflow: hidden;
-  word-wrap: break-word;
 }
 
 .post-desc {
-  margin: 5px 10px;
-  line-height: 25px;
-  height: 25%;
+  margin: 10px;
+  height: 120px;
+  line-height: 24px;
+  color: #6b6b6b;
   overflow: hidden;
-  word-wrap: break-word;
-  color: rgb(108, 107, 107);
-  font-size: medium;
 }
 
 .post-footer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 20px 10px;
-  align-items: center;
-}
-
-.post-footer p {
-  font-size: 1rem;
-  font-weight: bold;
+  justify-content: center;
 }
 
 .post-footer button {
-  padding: 5px 15px;
-  background: var(--ui-gradient);
-  border-radius: 5px;
-  font-size: small;
-  color: var(--white);
-  text-decoration: none;
+  padding: 8px 20px;
   border: none;
+  background: var(--ui-gradient);
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .post-footer button:hover {
   background: var(--ui-gradient-negative);
 }
+
+@media (max-width: 768px) {
+  .popular,
+  .recent-posts {
+    justify-content: center;
+  }
+}
+
+
+/* ================= DOT GRID ===================== */
+canvas {
+  margin-bottom: 10px;
+}
+
+.dot-grid-container {
+    position: relative;
+    height: 700px; 
+    background-color: #0b0715;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gridCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+}
+
+.dot-grid-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 40px;
+    text-align: center;
+    color: #ffffff;
+    pointer-events: none;
+}
+
+.dot-grid-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: var(--ui-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.dot-grid-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dot-grid-content a, 
+.read-more {
+    pointer-events: auto !important; 
+}
+
+.read-more {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    background: var(--ui-gradient);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background: var(--ui-gradient-negative);
+    transform: translateY(-2px);
+}
+
 
 /* ================= FOOTER ================= */
 .footer {
@@ -502,6 +531,10 @@ nav {
   text-decoration: underline;
   text-decoration-color: var(--white);
   font-weight: bold;
+}
+
+.social-icons:hover {
+  color: var(--black);
 }
 
 .footer-link {
