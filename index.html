@@ -72,6 +72,11 @@
   <div class="hero-content">
     <h1>I M S A</h1>
     <p>A student community where mathematics meets real-world applications.</p>
+    <div class="explore">
+      <a href="#articles">
+        <button>Explore</button>
+      </a>
+    </div>
   </div>
 
 <!-- glass card -->
@@ -104,54 +109,168 @@
   </svg>
 </div>
 
-<!-- ================= MAIN CONTENT ================= -->
 <main>
+
+  <!-- ================= POPULAR POSTS ================= -->
   <div class="pop-posts-container">
-    <div class="pop-header">
-        <h1>Popular Articles</h1>
-        <a href="" class="compose">
-            <button><i class="fa-sharp fa-solid fa-pen"></i>&nbsp; Compose</button>
-        </a>
+    <div class="pop-header" id="articles">
+      <h1>Popular Articles</h1>
+      <a href="#" class="compose">
+        <button>
+          <i class="fa-sharp fa-solid fa-pen"></i>&nbsp; Compose
+        </button>
+      </a>
     </div>
 
-    <div class="pop-posts">
-        <div class="post-box">
-            <div class="post-img-wrapper">
-                <img src="" alt="" onerror="this.onerror=null; this.src='images/default-image.png'">
-            </div>
-            <div class="post-content">
-                <h2></h2>
-                <p></p>
-                <div class="middle">
-                    <a href="">Read More</a>
-                </div>
-            </div>
+    <div class="popular">
+
+      <div class="post-box">
+        <div class="post-img-wrapper">
+          <img src="" alt="post image"
+               onerror="this.onerror=null; this.src='images/default-image.png'">
         </div>
+        <div class="post-content">
+          <h2>Modern Web Design</h2>
+          <p>Learn the fundamentals of clean and modern UI design.</p>
+          <div class="middle">
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-box">
+        <div class="post-img-wrapper">
+          <img src="" alt="post image"
+               onerror="this.onerror=null; this.src='images/default-image.png'">
+        </div>
+        <div class="post-content">
+          <h2>CSS Animation Effects</h2>
+          <p>Create smooth animations using pure CSS.</p>
+          <div class="middle">
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-box">
+        <div class="post-img-wrapper">
+          <img src="" alt="post image"
+               onerror="this.onerror=null; this.src='images/default-image.png'">
+        </div>
+        <div class="post-content">
+          <h2>JavaScript Basic Concepts</h2>
+          <p>Understand the core concepts of JavaScript.</p>
+          <div class="middle">
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-box">
+        <div class="post-img-wrapper">
+          <img src="" alt="post image"
+               onerror="this.onerror=null; this.src='images/default-image.png'">
+        </div>
+        <div class="post-content">
+          <h2>Responsive Layouts</h2>
+          <p>Build layouts that work on all devices.</p>
+          <div class="middle">
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-        <div class="recent-posts-container">
-            <h1>Recent Articles</h1>
-            <div class="recent-posts">
-                    <div class="recent-post-box">
-                    <a href="" class="link-card">
-                    <div class="img-container">
-                        <div>
-                        <img src="" alt="" onerror="this.onerror=null; this.src='images/default-image.png'">
-                    </div>
-                    </div>
-                    <p class="days"></p>
-                    <h2 title=""></h2>
-                    <p class="post-desc"></p>
-                    <div class="post-footer">
-                       <button >ReadMore</button>
-                    </div>
-                </a>
-                </div>
-            </div>
-            
+  <!-- ================= RECENT POSTS ================= -->
+  <div class="recent-posts-container">
+    <h1>Recent Articles</h1>
+
+    <div class="recent">
+      <div class="recent-posts">
+
+        <div class="recent-post-box">
+          <div class="img-container">
+            <img src="" alt="recent post"
+                 onerror="this.onerror=null; this.src='images/default-image.png'">
+          </div>
+          <p class="days">2 days ago</p>
+          <h2>Flexbox Guide</h2>
+          <p class="post-desc">
+            Master CSS Flexbox with practical layout examples.
+          </p>
+          <div class="post-footer">
+            <button>Read More</button>
+          </div>
         </div>
-    </main>
+
+        <div class="recent-post-box">
+          <div class="img-container">
+            <img src="" alt="recent post"
+                 onerror="this.onerror=null; this.src='images/default-image.png'">
+          </div>
+          <p class="days">5 days ago</p>
+          <h2>Glassmorphism UI</h2>
+          <p class="post-desc">
+            Create beautiful glass-style UI components.
+          </p>
+          <div class="post-footer">
+            <button>Read More</button>
+          </div>
+        </div>
+
+        <div class="recent-post-box">
+          <div class="img-container">
+            <img src="" alt="recent post"
+                 onerror="this.onerror=null; this.src='images/default-image.png'">
+          </div>
+          <p class="days">1 week ago</p>
+          <h2>Landing Page</h2>
+          <p class="post-desc">
+            Design high-converting landing pages with HTML & CSS.
+          </p>
+          <div class="post-footer">
+            <button>Read More</button>
+          </div>
+        </div>
+
+        <div class="recent-post-box">
+          <div class="img-container">
+            <img src="" alt="recent post"
+                 onerror="this.onerror=null; this.src='images/default-image.png'">
+          </div>
+          <p class="days">2 week ago</p>
+          <h2>Personal Portfolio</h2>
+          <p class="post-desc">
+            Design a personal portfolio page with HTML & CSS.
+          </p>
+          <div class="post-footer">
+            <button>Read More</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== DOT GRID ================= -->
+  <div class="dot-grid-container">
+    <canvas id="gridCanvas"></canvas>
+    
+    <div class="dot-grid-content">
+        <h2>Who We Are ?</h2>
+        <p>
+            The Industrial Mathematics Students’ Association (IMSA) is a society dedicated to enhance the knowledge and practical applications of mathematics among its members. Collaborating with industry, IMSA focuses on promoting industrial mathematics and its relevance in real-world problem-solving. This association provides a platform for mathematics undergraduates of the Faculty to connect, exchange ideas, and learn from one another. By actively engaging undergraduates, IMSA contributes in bridging the gap between academia and industry, equipping its members for successful careers in industrial mathematics and related fields. Additionally, IMSA is committed to disseminate mathematics knowledge to the general public by organizing various activities to support mathematics learners, including school children.
+        </p>
+        <a href="about-us.html">
+          <button type="button" class="read-more">Read More</button>
+        </a>
+    </div>
+  </div>
+
+</main>
+
 
 <!-- ================= FOOTER ================= -->
     <footer>
@@ -176,17 +295,17 @@
                 <ul class="list-unstyled d-flex flex-row justify-content-center">
                     <li>
                     <a class="text-white px-2" href="#!">
-                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-facebook-square social-icons"></i>
                     </a>
                     </li>
                     <li>
                     <a class="text-white px-2" href="#!">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram social-icons"></i>
                     </a>
                     </li>
                     <li>
                     <a class="text-white ps-2" href="#!">
-                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-youtube social-icons"></i>
                     </a>
                     </li>
                 </ul>
@@ -289,52 +408,108 @@
 
 <!-- ================= CANVAS ANIMATION JS ================= -->
 <script>
-const canvas = document.getElementById("waveCanvas");
-const ctx = canvas.getContext("2d");
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+const waveCanvas = document.getElementById("waveCanvas");
+const waveCtx = waveCanvas.getContext("2d");
+let waveT = 0;
+
+function resizeWave() {
+    waveCanvas.width = window.innerWidth;
+    waveCanvas.height = waveCanvas.parentElement.offsetHeight;
 }
-resize();
-window.addEventListener("resize", resize);
 
-let t = 0;
-
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (let i = 0; i < 3; i++) {
-    ctx.beginPath();
-    ctx.moveTo(0, canvas.height / 2);
-
-    for (let x = 0; x < canvas.width; x++) {
-      const y =
-        Math.sin(x * 0.01 + t + i) * 40 +
-        canvas.height / 2 + i * 30;
-      ctx.lineTo(x, y);
+function animateWave() {
+    waveCtx.clearRect(0, 0, waveCanvas.width, waveCanvas.height);
+    for (let i = 0; i < 3; i++) {
+        waveCtx.beginPath();
+        waveCtx.moveTo(0, waveCanvas.height / 2);
+        for (let x = 0; x < waveCanvas.width; x++) {
+            const y = Math.sin(x * 0.01 + waveT + i) * 40 + waveCanvas.height / 2 + i * 30;
+            waveCtx.lineTo(x, y);
+        }
+        waveCtx.strokeStyle = `rgba(0,191,255,${0.3 - i * 0.08})`;
+        waveCtx.lineWidth = 2;
+        waveCtx.stroke();
     }
-
-    ctx.strokeStyle = `rgba(0,191,255,${0.3 - i * 0.08})`;
-    ctx.lineWidth = 2;
-    ctx.stroke();
-  }
-
-  t += 0.02;
-  requestAnimationFrame(animate);
+    waveT += 0.02;
+    requestAnimationFrame(animateWave);
 }
-animate();
 
-//glass cards revealing animation
+// --- DOT GRID ANIMATION (Bottom Canvas) ---
+const gridCanvas = document.getElementById('gridCanvas');
+const gridCtx = gridCanvas.getContext('2d');
+let gridDots = [];
+const spacing = 35;
+const mouse = { x: -1000, y: -1000 };
+
+function initGrid() {
+    // Make sure canvas fills its container
+    gridCanvas.width = gridCanvas.parentElement.clientWidth;
+    gridCanvas.height = 700; // Give it a fixed height or make it responsive
+    gridDots = [];
+    for (let x = spacing / 2; x < gridCanvas.width; x += spacing) {
+        for (let y = spacing / 2; y < gridCanvas.height; y += spacing) {
+            gridDots.push({ x, y });
+        }
+    }
+}
+
+function drawGrid() {
+    gridCtx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
+    gridDots.forEach(dot => {
+        const dx = mouse.x - dot.x;
+        const dy = mouse.y - dot.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const maxDist = 200;
+
+        let opacity = 0.15;
+        let dotRadius = 3; 
+        let color = "rgba(100, 100, 150, ";
+
+        if (distance < maxDist) {
+            const ratio = 1 - (distance / maxDist);
+            opacity = ratio + 0.15;
+            dotRadius = 3 + (4 * ratio); // Grow from 3 to 7
+            color = "rgba(150, 100, 255, ";
+        }
+
+        gridCtx.beginPath();
+        gridCtx.arc(dot.x, dot.y, dotRadius, 0, Math.PI * 2);
+        gridCtx.fillStyle = color + opacity + ")";
+        gridCtx.fill();
+    });
+    requestAnimationFrame(drawGrid);
+}
+
+// --- SHARED LOGIC ---
+window.addEventListener('mousemove', (e) => {
+    const rect = gridCanvas.getBoundingClientRect();
+    // Correctly map mouse position to the grid canvas space
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+});
+
+window.addEventListener('resize', () => {
+    resizeWave();
+    initGrid();
+});
+
+// Initialization
+resizeWave();
+animateWave();
+initGrid();
+drawGrid();
+
+// Glass cards revealing
 window.addEventListener("load", () => {
     const cards = document.querySelectorAll(".glass-card");
-
     cards.forEach((card, index) => {
-      setTimeout(() => {
-        card.classList.add("show");
-      }, 600 + index * 300); // stagger animation
+        setTimeout(() => {
+            card.classList.add("show");
+        }, 600 + index * 300);
     });
-  });
+});
+
 </script>
 
 </body>
