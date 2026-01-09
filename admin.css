@@ -1,7 +1,7 @@
 :root {
-  --uiclr: #000000;
+  --ui-gradient: linear-gradient(45deg, #00BFFF, #1E90FF);
+  --ui-gradient-negative: linear-gradient(45deg, #1E90FF, #00BFFF);
   --white: #e4e9fd;
-  --main-text: #00BFFF;
   --black: #040c0e;
   --light-black: rgb(53, 50, 50);
 }
@@ -14,7 +14,7 @@
 }
 
 nav {
-  background-color: var(--uiclr);
+  background: var(--ui-gradient);
   height: 100px;
   width: 100%;
   display: flex;
@@ -38,7 +38,7 @@ nav {
   font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
-  color: var(--main-text);
+  color: var(--black);
 }
 
 .nav-items ul {
@@ -54,11 +54,10 @@ nav {
 
 .nav-items ul li a {
   text-decoration: none;
-  color: var(--main-text);
+  color: var(--black);
   font-size: 1.08rem;
 }
 
-/* ------------------------------------------------------------- */
 body {
   background-color: rgba(128, 128, 128, 0.114);
   height: 100vh;
@@ -85,9 +84,10 @@ main {
   height: 100%;
   width: 75%;
 }
+/* here */
 
 .d-board-text {
-  background-color: var(--uiclr);
+  background-color: #1E90FF;
   padding: 10px;
   color: white;
   font-size: 1.25rem;
@@ -115,7 +115,7 @@ main {
 }
 
 .controls button:hover {
-  background-color: var(--uiclr);
+  background: var(--ui-gradient-negative);
   color: white;
 }
 
@@ -142,7 +142,7 @@ main {
 }
 
 .stat-box:nth-child(2) {
-  background-color: var(--uiclr);
+  background: var(--ui-gradient);
 }
 
 .stat-box:nth-child(3) {
@@ -226,7 +226,7 @@ td img {
 
 th {
   height: 40px;
-  background-color: var(--uiclr);
+  background-color: #1E90FF;
   color: white;
 }
 
@@ -263,7 +263,7 @@ td a:hover {
 
 .author-name:hover {
   opacity: 1;
-  color:var(--uiclr)
+  color:var(--ui-gradient)
 }
 
 .edit-tbn {
@@ -369,7 +369,7 @@ td a:hover {
 }
 
 .selected{
-  background-color: var(--uiclr);
+  background: var(--ui-gradient);
   color: white;
 }
 
@@ -387,7 +387,7 @@ td a:hover {
 #style-2::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color:var(--uiclr);
+	background: var(--ui-gradient);
 }
 
 #style-2::-webkit-scrollbar {
