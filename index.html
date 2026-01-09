@@ -17,6 +17,14 @@
 
 <body>
 
+<!-- ================= PRE LOADER =================== -->
+ <div id="preloader">
+  <div class="loader-container">
+    <div class="spinner"></div>
+    <img src="IMSA image.jpeg" alt="Logo" class="loader-logo">
+  </div>
+</div>
+
 <!-- ================= NAVBAR ================= -->
 <nav>
     <!-- LEFT -->
@@ -61,6 +69,7 @@
         </ul>
     </div>
     </nav>
+
 
 <!-- ================= HERO SECTION ================= -->
 <header class="hero-section">
@@ -409,21 +418,26 @@
 <!-- ================= CANVAS ANIMATION JS ================= -->
 <script>
 
+// 1. Setup Wave Canvas Variables
 const waveCanvas = document.getElementById("waveCanvas");
 const waveCtx = waveCanvas.getContext("2d");
 let waveT = 0;
 
+// 2. Initialize Canvas Size
 function resizeWave() {
     waveCanvas.width = window.innerWidth;
+    // Parent element is the .hero-section
     waveCanvas.height = waveCanvas.parentElement.offsetHeight;
 }
 
+// 3. Wave Animation Logic
 function animateWave() {
     waveCtx.clearRect(0, 0, waveCanvas.width, waveCanvas.height);
     for (let i = 0; i < 3; i++) {
         waveCtx.beginPath();
         waveCtx.moveTo(0, waveCanvas.height / 2);
         for (let x = 0; x < waveCanvas.width; x++) {
+            // Your original sine wave formula
             const y = Math.sin(x * 0.01 + waveT + i) * 40 + waveCanvas.height / 2 + i * 30;
             waveCtx.lineTo(x, y);
         }
@@ -434,6 +448,34 @@ function animateWave() {
     waveT += 0.02;
     requestAnimationFrame(animateWave);
 }
+
+// 4. Combined Load Event
+window.addEventListener("load", function() {
+    // Start Waves immediately
+    resizeWave();
+    animateWave();
+    window.addEventListener('resize', resizeWave);
+
+    const loader = document.getElementById("preloader");
+    const cards = ["first", "second", "third"];
+
+    // Wait for the 4-second loading time
+    setTimeout(() => {
+        // Hide the preloader
+        loader.classList.add("loader-hidden");
+
+        // After loader begins to fade (around 500ms), start revealing cards one by one
+        cards.forEach((id, index) => {
+            setTimeout(() => {
+                const card = document.getElementById(id);
+                if (card) {
+                    card.classList.add("show");
+                }
+            }, 500 + (index * 400)); // Stagger: 400ms gap between each card
+        });
+
+    }, 4000); 
+});
 
 // --- DOT GRID ANIMATION (Bottom Canvas) ---
 const gridCanvas = document.getElementById('gridCanvas');
@@ -508,6 +550,22 @@ window.addEventListener("load", () => {
             card.classList.add("show");
         }, 600 + index * 300);
     });
+});
+
+
+// for pre loader spinner
+window.addEventListener("load", function() {
+  const loader = document.getElementById("preloader");
+  
+  // Wait for 2000 milliseconds (2 seconds)
+  setTimeout(() => {
+    loader.classList.add("loader-hidden");
+    
+    // Optional: Remove the element from the DOM after the fade-out ends
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 500); // 500ms matches the CSS transition time
+  }, 2000); 
 });
 
 </script>
