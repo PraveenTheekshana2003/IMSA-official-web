@@ -1,12 +1,14 @@
-body{
-
+.back{
+  background-color: rgb(4, 4, 4);
 }
+
 .video-background video {
     position: fixed; /* Fixes the video to the viewport */
     right: 0;
-    bottom: 0;
-    min-width: 100%; /* Ensures the video covers full width */
-    min-height: 100%; /* Ensures the video covers full height */
+    bottom: 5.3%;
+    right: 2.5%;
+    min-width: 10%; /* Ensures the video covers full width */
+    min-height: 10%; /* Ensures the video covers full height */
     z-index: -1; /* Puts the video behind other content */
     object-fit: cover; /* Ensures the video covers the area while maintaining aspect ratio */
   }
@@ -41,8 +43,6 @@ body{
   float: left;
   }
   .liquid-card:hover{
-    background: white;
-    color: black;
     border: 5px solid black;
     width: 50.2%;
   }
