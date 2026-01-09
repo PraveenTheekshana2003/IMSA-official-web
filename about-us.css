@@ -1,0 +1,78 @@
+body{
+
+}
+.video-background video {
+    position: fixed; /* Fixes the video to the viewport */
+    right: 0;
+    bottom: 0;
+    min-width: 100%; /* Ensures the video covers full width */
+    min-height: 100%; /* Ensures the video covers full height */
+    z-index: -1; /* Puts the video behind other content */
+    object-fit: cover; /* Ensures the video covers the area while maintaining aspect ratio */
+  }
+
+  .content {
+    position: relative; /* Ensures content appears above the video */
+    z-index: 1; /* Puts content above the video */
+    color: white; /* Makes text visible over a dark video */
+    text-align: center;
+    padding: 20px;
+    /* Add more styling for your content */
+  }
+  .liquid-card{
+   position: relative;
+   margin-left: 5%;
+   margin-top: 2.5%;
+   margin-bottom: 2.5%;
+  width: 50%;
+  height: 400px;
+  border-radius: 22px;
+  overflow: hidden;
+  backdrop-filter: blur(3px) saturate(130%);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 0.5s;
+  color: white;
+  padding: 20px;
+  float: left;
+  }
+  .liquid-card:hover{
+    background: white;
+    color: black;
+    border: 5px solid black;
+    width: 50.2%;
+  }
+  .about-us{ 
+    font-weight: bold;
+  }
+
+.about-img img {
+  float: left;
+  margin-left: 10%;
+   margin-top: 5%;
+  border-radius: 5%;
+  width: 350px;
+ 
+}
+
+footer{
+  display: flex;
+  width: 100%;
+}
+
+@media only screen and (max-width:800px) {
+.liquid-card{
+    width: 90%;
+   
+}
+.liquid-card:hover{
+  width: 90%;
+}
+.about-img img{
+  width: 0%;
+}
+}
