@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="not-found.css">
-    <link rel="icon" type="image/x-icon" href="IMSA image - without background.png">
+    <link rel="icon" type="image/x-icon" href="IMSA image.jpeg">
 </head>
 <body>
     <main>
@@ -17,11 +17,69 @@
             <h3>ERROR CODE: 404</h3>
             <h1>OOOPS!!</h1>
             <h2>The page you are looking for may have been moved, deleted, or possibly never existed.</h2>
-            <a href="home.html">Go Home</a>
+            <a href="index.html">Go Home</a>
         </div>
-        <div class="main-image">
-            <img src="" alt="">
-        </div>
+
+        <div id="robot-space"></div>
     </main>
+
+    <script>
+        const robotSpace = document.getElementById('robot-space');
+        const robotCount = 8; 
+
+        function createRobot() {
+            const robotWrap = document.createElement('div');
+            robotWrap.classList.add('robot');
+            
+            // Updated HTML: Added arm and a torch-body for the arm to hold
+            robotWrap.innerHTML = `
+                <div class="robot-body">
+                    <div class="antenna"></div>
+                    <div class="head">
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+                    </div>
+                    <div class="torso"></div>
+                    <div class="arm">
+                        <div class="torch-body">
+                            <div class="flashlight"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            robotSpace.appendChild(robotWrap);
+
+            moveRobot(robotWrap);
+
+            setInterval(() => {
+                moveRobot(robotWrap);
+            }, 3000); 
+        }
+
+        function moveRobot(robot) {
+            const maxX = window.innerWidth - 150; // Increased padding
+            const maxY = window.innerHeight - 150;
+            
+            const newX = Math.floor(Math.random() * maxX);
+            const newY = Math.floor(Math.random() * maxY);
+            
+            const currentX = parseInt(robot.style.left) || 0;
+            
+            robot.style.left = `${newX}px`;
+            robot.style.top = `${newY}px`;
+            
+            const robotBody = robot.querySelector('.robot-body');
+            if (newX > currentX) {
+                robotBody.style.transform = `scaleX(1)`;
+            } else {
+                robotBody.style.transform = `scaleX(-1)`;
+            }
+        }
+
+        for (let i = 0; i < robotCount; i++) {
+            createRobot();
+        }
+    </script>
 </body>
 </html>
