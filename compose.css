@@ -1,7 +1,7 @@
 :root {
-  --uiclr: #000000;
+  --ui-gradient: linear-gradient(45deg, #00BFFF, #1E90FF);
+  --ui-gradient-negative: linear-gradient(45deg, #1E90FF, #00BFFF);
   --white: #e4e9fd;
-  --main-text: #00BFFF;
   --black: #040c0e;
   --light-black: rgb(53, 50, 50);
 }
@@ -38,7 +38,7 @@ main {
 }
 
 .post-title input:focus {
-  border-color: var(--uiclr);
+  border-color: var(--black);
 }
 
 .post-content {
@@ -54,7 +54,7 @@ main {
 }
 
 .post-content textarea:focus {
-  border: 2px solid var(--uiclr);
+  border: 2px solid var(--black);
 }
 
 .custom-file-input {
@@ -94,7 +94,7 @@ main {
   margin-top: 2%;
   padding: 8px 20px;
   font-size: 14pt;
-  background-color: var(--uiclr);
+  background-color: #00af34c7;
   color: var(--white);
   outline: none;
   border: none;
