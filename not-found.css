@@ -1,99 +1,189 @@
+:root {
+  --ui-gradient: linear-gradient(45deg, #00BFFF, #1E90FF);
+  --ui-gradient-negative: linear-gradient(45deg, #1E90FF, #00BFFF);
+  --white: #e4e9fd;
+  --black: #040c0e;
+  --light-black: rgb(53, 50, 50);
+}
+
 *{
-        margin: 0;
-        padding: 0;
-        font-family: 'Montserrat', sans-serif;
-    }
-    body{
-        display:flex;
-        justify-content:center;
-        align-items: center ;
-        height: 100vh;
+   margin: 0;
+   padding: 0;
+   font-family: 'Montserrat', sans-serif;
+}
 
-    }
-    main{
-        display: flex;
-        flex-direction: row;
-        padding: 0 10% ;
-        gap: 40px;
-    }
-    .main-text{
-        width: 50%;
-        text-align: start;
-        padding: 10px;
-        margin-right: 10px;
-    }
-    .main-text h3{
-        font-size: 15px;
-        color:#ABB0B3;
-        text-transform: capitalize;
-        letter-spacing: 2px;
-        margin-bottom: 16px;
-    }
-     .main-text h1{
-        font-size: 57px;
-        color:#121212;
-        font-weight: bold;
-        margin-top: 12px;
-     }
+body{
+   display:flex;
+   justify-content:center;
+   align-items: center ;
+   height: 100vh;
+   background-color: #050510;
+   overflow-x: hidden;
+   overflow-y: hidden;
+}
+main{
+   display: flex;
+   flex-direction: row;
+   padding: 0 10% ;
+   gap: 40px;
+}
+.main-text{
+   width: 50%;
+   text-align: start;
+   padding: 10px;
+   margin-left: 400px;
+   margin-right: 10px;
+}
+.main-text h3{
+   font-size: 15px;
+   color:#ABB0B3;
+   text-transform: capitalize;
+   letter-spacing: 2px;
+   margin-bottom: 16px;
+}
+.main-text h1{
+   font-size: 57px;
+   color: var(--white);
+   font-weight: bold;
+   margin-top: 12px;
+}
 
-     .main-text h2{
-        font-size: 33px;
-        color: #121212;
-        font-weight: 400; 
-        margin-bottom:40px;
-        line-height: 48px;
-    
+.main-text h2{
+   font-size: 33px;
+   color: var(--white);
+   font-weight: 400; 
+   margin-bottom:40px;
+   line-height: 48px;
+}
 
-     }
-     .main-text a{
-        padding: 10px 20px;
-        background: linear-gradient(90deg,#fef506,#ff6575,#ae4df9,#029aff);
-        background-size: 500%;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        animation: color 5s infinite alternate;
+.main-text a {
+   margin-top: 20px;
+   padding: 12px 30px;
+   margin-left: 120px;
+   border: none;
+   background: var(--ui-gradient);
+   color: var(--white);
+   text-decoration: none;
+   width: 100px;
+   height: 50px;
+   border-radius: 5px;
+   font-weight: bold;
+}
 
-     }
-     @keyframes color {
-        0%{
-            background-position: left;
-        }
-        100%{
-            background-position: right;
-        }
-        
-     }
-     .main-text a:hover{
-        animation: color 1s infinite alternate;
-     }
-    .main-image{
-        display: flex;
-        justify-content: center;
-        width:50%;
-        /* animation: move 10s infinite linear; */
-        background-color: transparent;
+.main-text a:hover  {
+   background: var(--ui-gradient-negative);
+}
 
-    }
-    @keyframes move 
-    {
-     0%{
-        transform: translateY(-10px);
-     }   
-     25%{
-        transform: translateX(10px);
-     }
-     50%{
-        transform: translateY(10px);
-     }
-     75%{
-        transform: translateX(-10px);
-     }
-     100%{
-        transform: translateY(-10px);
-     }
-    }
-    .main-image img{
-        width: 720px;
-         animation: move 10s infinite linear;
-    }
+.main-image{
+   display: flex;
+   justify-content: center;
+   width:50%;
+   background-color: transparent;
+}
+
+.main-image img{
+   width: 720px;
+   animation: move 10s infinite linear;
+}
+
+/* The Robot Wrapper */
+.robot {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    transition: all 3s linear;
+    z-index: 5;
+}
+
+.robot-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+/* Mechanical Parts */
+.head {
+    width: 30px;
+    height: 25px;
+    background: #444;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid #222;
+}
+
+.eye {
+    position: absolute;
+    top: 6px;
+    width: 6px;
+    height: 6px;
+    background: #00ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ffff;
+}
+.eye.left { left: 5px; }
+.eye.right { right: 5px; }
+
+.antenna {
+    width: 2px;
+    height: 10px;
+    background: #444;
+    margin: 0 auto;
+    border-top: 3px solid #00ffff;
+}
+
+.torso {
+    width: 35px;
+    height: 32px;
+    background: #333;
+    border-radius: 4px;
+    margin: 2px auto;
+    border: 2px solid #222;
+    position: relative;
+}
+
+/* NEW: The Robot Arm */
+.arm {
+    position: absolute;
+    top: 35px;
+    right: 5px; /* Attached to the side of the torso */
+    width: 25px;
+    height: 8px;
+    background: #444;
+    border: 1px solid #222;
+    border-radius: 4px;
+    transform-origin: left center;
+    transform: rotate(20deg);
+}
+
+/* NEW: The Torch Handle */
+.torch-body {
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    width: 12px;
+    height: 18px;
+    background: #222;
+    border-radius: 2px;
+    border: 1px solid #444;
+}
+
+/* Flashlight Beam */
+.flashlight {
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 150px;
+    height: 200px;
+    background: radial-gradient(circle at top left, rgba(0, 255, 255, 0.3), transparent 75%);
+    clip-path: polygon(0% 0%, 100% 40%, 100% 100%, 0% 60%);
+    transform-origin: top left;
+    animation: sweep 2s infinite ease-in-out alternate;
+    pointer-events: none;
+}
+
+@keyframes sweep {
+    from { transform: rotate(-15deg); opacity: 0.2; }
+    to { transform: rotate(25deg); opacity: 0.7; }
+}
