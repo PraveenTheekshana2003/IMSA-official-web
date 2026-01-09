@@ -4,6 +4,8 @@
   --main-text: #00BFFF;
   --black: #040c0e;
   --light-black: rgb(53, 50, 50);
+  --ui-gradient: linear-gradient(45deg, #00BFFF, #1E90FF);
+  --ui-gradient-negative: linear-gradient(45deg, #1E90FF, #00BFFF);
 }
 
 * {
