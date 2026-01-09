@@ -1,7 +1,7 @@
 :root {
-  --uiclr: #000000;
+  --ui-gradient: linear-gradient(45deg, #00BFFF, #1E90FF);
+  --ui-gradient-negative: linear-gradient(45deg, #1E90FF, #00BFFF);
   --white: #e4e9fd;
-  --main-text: #00BFFF;
   --black: #040c0e;
   --light-black: rgb(53, 50, 50);
 }
@@ -65,7 +65,7 @@ main{
 }
 
 .forms-container input[type="text"]:focus{
-    border-color: var(--main-text);
+    border-color: #00BFFF;
 }
 
 .forms-container textarea{
@@ -78,7 +78,7 @@ main{
 }
 
 .forms-container textarea:focus{
-    border-color: var(--main-text);
+    border-color: #00BFFF;
 }
 
 .forms-container label{
@@ -111,12 +111,10 @@ main{
 
 .buttons input[type="reset"]{
     background-color: red;
-    border: 2px solid var(--uiclr);
 }
 
 .buttons input[type="submit"]{
     background-color:  #00af34c7;
-    border: 2px solid var(--uiclr);
 }
 
 .buttons input[type="reset"]:hover{
@@ -140,10 +138,9 @@ main{
 .custom-file-input::before {
   content: "Upload image";
   display: inline-block;
-  background: var(--main-text);
-  border: 2px solid var(--uiclr);
+  background: var(--ui-gradient);
   border-radius: 5px;
-  padding: 5px 8px;
+  padding: 10px 16px;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
@@ -155,10 +152,5 @@ main{
 }
 
 .custom-file-input:hover::before {
-  background-color: var(--uiclr);
-  border: 2px solid var(--main-text);
-}
-
-.custom-file-input:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  background: var(--ui-gradient-negative);
 }
