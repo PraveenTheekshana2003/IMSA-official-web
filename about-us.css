@@ -2,6 +2,9 @@
   background-color: rgb(4, 4, 4);
 }
 
+.video-background{
+  display: flex;
+}
 .video-background video {
     position: fixed; /* Fixes the video to the viewport */
     right: 0;
@@ -23,11 +26,11 @@
   }
   .liquid-card{
    position: relative;
-   margin-left: 5%;
+   margin-left: 15%;
    margin-top: 2.5%;
    margin-bottom: 2.5%;
-  width: 50%;
-  height: 400px;
+  width: 70%;
+  height: 300px;
   border-radius: 22px;
   overflow: hidden;
   backdrop-filter: blur(3px) saturate(130%);
@@ -36,7 +39,7 @@
   justify-items: center;
   justify-content: center;
   text-align: center;
-  transition-property: background;
+  transition-property: background ,box-shadow;
   transition-duration: 0.5s;
   color: white;
   padding: 20px;
@@ -44,7 +47,8 @@
   }
   .liquid-card:hover{
     border: 5px solid black;
-    width: 50.2%;
+    width: 70.2%;
+    box-shadow:#00BFFF 5px 5px;
   }
   .about-us{ 
     font-weight: bold;
@@ -64,15 +68,94 @@ footer{
   width: 100%;
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:500px) {
 .liquid-card{
     width: 90%;
    
 }
 .liquid-card:hover{
   width: 90%;
+  box-shadow:#00BFFF 5px 5px;
 }
 .about-img img{
   width: 0%;
 }
+}
+#myVideo{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -5;
+}
+
+/*position panal*/
+
+.position_box{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  float: left;
+  
+}
+.position_header{
+   width: 35%;
+   font-weight: bold;
+   padding: 0.5%;
+   background-color: aqua;
+   border-radius: 50px;
+   margin-left: 1%;
+   margin-top: 3%;
+  text-align: center;
+  box-shadow: 8px 8px 5px #00BFFF ;
+}
+.position_row{
+  justify-content: center;
+  align-items: center;
+}
+.position{
+   margin-top: 0;
+   margin-left: 3%;
+   padding: 2%;
+   float: left;
+}
+.member{
+ 
+}
+
+@media only screen and (max-width:500px) {
+
+}
+
+/*CM members*/
+
+.CM_member img{
+  border-radius: 40%;
+  width: 50%;
+  
+}
+.CM_position{
+   margin-top: 0;
+   margin-left: 2%;
+   padding: 1%;
+   float: left;
+}
+.AC_year{
+  padding: 2%;
+  height: 240px;
+  margin-top: 5%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-style: inset;
+}
+.year{
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+
+
+@media only screen and (max-width:500px) {
+
 }
