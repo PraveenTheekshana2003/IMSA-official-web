@@ -68,7 +68,7 @@
     </main>
 
 <div class="video-background">    
-
+    
             <div class="liquid-card">
 
                     <div class="about-us">
@@ -83,7 +83,10 @@
                         </p>
                     </div>
             </div>
+    <canvas id="bgCanvas"> </canvas> 
+
 </div>
+
 <div class="position_box">
     <div class="position_header"><h2>CURRENT OFFICE BEARERS</h2></div>
     <div class="position_row">
@@ -309,5 +312,84 @@
         <!-- End of .container -->
     </footer>
 
+    <script>
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const particleCount = 60;
+        const symbols = ['π', '∑', '∞', '∆', 'Ω', '√'];
+        const shapes = ['square', 'circle', 'triangle'];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor(isInitial) {
+                this.init(isInitial);
+            }
+
+            init(isInitial) {
+                this.x = isInitial ? Math.random() * canvas.width : canvas.width + 50;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 25 + 10;
+                this.speed = Math.random() * 2 + 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotSpeed = (Math.random() - 0.5) * 0.03;
+                
+                // Randomly choose if it's a shape or a symbol
+                this.isSymbol = Math.random() > 0.5;
+                this.type = this.isSymbol 
+                            ? symbols[Math.floor(Math.random() * symbols.length)]
+                            : shapes[Math.floor(Math.random() * shapes.length)];
+            }
+
+            update() {
+                this.x -= this.speed;
+                this.rotation += this.rotSpeed;
+                if (this.x + this.size < -50) this.init(false);
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                ctx.strokeStyle = `rgba(0, 255, 170, ${this.opacity})`;
+                ctx.fillStyle = `rgba(0, 255, 170, ${this.opacity})`;
+                ctx.lineWidth = 1.5;
+
+                if (this.isSymbol) {
+                    ctx.font = `${this.size}px Arial`;
+                    ctx.fillText(this.type, 0, 0);
+                } else {
+                    ctx.beginPath();
+                    if (this.type === 'square') ctx.strokeRect(-this.size/2, -this.size/2, this.size, this.size);
+                    if (this.type === 'circle') { ctx.arc(0, 0, this.size/2, 0, Math.PI*2); ctx.stroke(); }
+                    if (this.type === 'triangle') {
+                        ctx.moveTo(0, -this.size/2);
+                        ctx.lineTo(this.size/2, this.size/2);
+                        ctx.lineTo(-this.size/2, this.size/2);
+                        ctx.closePath(); ctx.stroke();
+                    }
+                }
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle(true));
+
+        function animate() {
+            ctx.fillStyle = '#0a0a0a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>
