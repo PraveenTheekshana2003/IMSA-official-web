@@ -5,29 +5,27 @@
 .video-background{
   display: flex;
 }
-.video-background video {
-    position: fixed; /* Fixes the video to the viewport */
-    right: 0;
-    bottom: 5.3%;
-    right: 2.5%;
-    min-width: 10%; /* Ensures the video covers full width */
-    min-height: 10%; /* Ensures the video covers full height */
-    z-index: -1; /* Puts the video behind other content */
-    object-fit: cover; /* Ensures the video covers the area while maintaining aspect ratio */
-  }
+
+canvas {
+         z-index: -5;
+         top: 0; 
+         left: 0;
+}
 
   .content {
     position: relative; /* Ensures content appears above the video */
-    z-index: 1; /* Puts content above the video */
+    z-index: 6; /* Puts content above the video */
     color: white; /* Makes text visible over a dark video */
     text-align: center;
     padding: 20px;
     /* Add more styling for your content */
   }
-  .liquid-card{
-   position: relative;
+
+ .liquid-card{
+   position: absolute;
+   z-index: 10;
    margin-left: 15%;
-   margin-top: 2.5%;
+   margin-top: 10%;
    margin-bottom: 2.5%;
   width: 70%;
   height: 300px;
@@ -39,17 +37,20 @@
   justify-items: center;
   justify-content: center;
   text-align: center;
-  transition-property: background ,box-shadow;
+  transition-property: background ,box-shadow ,transform;
   transition-duration: 0.5s;
   color: white;
   padding: 20px;
   float: left;
   }
+  
   .liquid-card:hover{
     border: 5px solid black;
     width: 70.2%;
     box-shadow:#00BFFF 5px 5px;
+    transform: scale(1.1);
   }
+
   .about-us{ 
     font-weight: bold;
   }
