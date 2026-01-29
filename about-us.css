@@ -45,14 +45,12 @@ canvas {
   color: white;
   padding: 20px;
   float: left;
+  transform: scale(1.1);
+   box-shadow:#00BFFF 2px 2px;
+   border: 5px solid black;
   }
   
-  .liquid-card:hover{
-    border: 5px solid black;
-    width: 70.2%;
-    box-shadow:#00BFFF 5px 5px;
-    transform: scale(1.1);
-  }
+  
 
   .about-us{ 
     font-weight: bold;
@@ -61,16 +59,13 @@ canvas {
 .about-img img {
   float: left;
   margin-left: 10%;
-   margin-top: 5%;
+  margin-top: 5%;
   border-radius: 5%;
   width: 350px;
  
 }
 
-footer{
-  display: flex;
-  width: 100%;
-}
+
 
 @media only screen and (max-width:500px) {
 .liquid-card{
@@ -137,6 +132,7 @@ footer{
    padding: 1%;
    float: left;
 }
+
 .AC_year{
   padding: 2%;
   height: 240px;
@@ -146,24 +142,25 @@ footer{
   width: 100%;
   border-style: inset;
 }
+
 .year{
   font-size: 20px;
   font-weight: bold;
   
 }
 
-
 @media only screen and (max-width:500px) {
+
 .AC_year{
   border-style: none;
 }
-}
 
+}
 .Activity {
-  clear: both; /* This is CRITICAL to fix the floating issue */
+  clear: both; 
   margin-top: 50px;
   padding-bottom: 50px;
-  background-color: white; /* Matches your image background */
+  background-color: white; 
   width: 100%;
   padding: 2%;
 }
@@ -191,3 +188,4 @@ footer{
 .one-activity{
   margin-bottom: 2%;
 }
+
