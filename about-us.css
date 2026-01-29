@@ -5,9 +5,12 @@
 .video-background{
   display: flex;
 }
+body{
+  background-color: white;
+}
 
 canvas {
-         z-index: -5;
+         z-index: -1;
          top: 0; 
          left: 0;
 }
@@ -81,48 +84,41 @@ footer{
 .about-img img{
   width: 0%;
 }
+
 }
-#myVideo{
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-  z-index: -5;
-}
+
 
 /*position panal*/
 
 .position_box{
   background-color: rgb(255, 255, 255);
   width: 100%;
-  float: left;
-  
+  float: left; 
 }
+
 .position_header{
-   width: 35%;
+   width: 40%;
    font-weight: bold;
    padding: 0.5%;
    background-color: aqua;
-   border-radius: 50px;
+  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
    margin-left: 1%;
    margin-top: 3%;
   text-align: center;
-  box-shadow: 8px 8px 5px #00BFFF ;
 }
+
 .position_row{
   justify-content: center;
   align-items: center;
 }
+
 .position{
    margin-top: 0;
    margin-left: 3%;
    padding: 2%;
    float: left;
 }
-.member{
- 
-}
+
 
 @media only screen and (max-width:500px) {
 
@@ -158,5 +154,40 @@ footer{
 
 
 @media only screen and (max-width:500px) {
+.AC_year{
+  border-style: none;
+}
+}
 
+.Activity {
+  clear: both; /* This is CRITICAL to fix the floating issue */
+  margin-top: 50px;
+  padding-bottom: 50px;
+  background-color: white; /* Matches your image background */
+  width: 100%;
+  padding: 2%;
+}
+.active-content h4{
+  font-weight: bold;
+  margin-top: 2%;
+}
+.img-active img{
+  width: 25%;
+
+}
+.img-active{
+  display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+.video-active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video-active iframe{
+  margin-top:2%;
+}
+.one-activity{
+  margin-bottom: 2%;
 }
